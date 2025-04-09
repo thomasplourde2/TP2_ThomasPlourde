@@ -10,7 +10,7 @@
                 "tags": [
                     "Register"
                 ],
-                "summary": "Register a user",
+                "summary": "Register a user throttling : 5",
                 "operationId": "65b7ef1b1e076c033bf91055f53bd9a1",
                 "requestBody": {
                     "content": {
@@ -50,7 +50,7 @@
                 "tags": [
                     "Login"
                 ],
-                "summary": "Log a user in",
+                "summary": "Log a user in throttling : 5",
                 "operationId": "b5cee56757c3c79c5b5f115fdc33f460",
                 "requestBody": {
                     "content": {
@@ -81,7 +81,7 @@
                 "tags": [
                     "Logout"
                 ],
-                "summary": "Log a user out",
+                "summary": "Log a user out throttling : 5",
                 "operationId": "b46f8611fc7d1123f2a3d573cee661c4",
                 "requestBody": {
                     "content": {

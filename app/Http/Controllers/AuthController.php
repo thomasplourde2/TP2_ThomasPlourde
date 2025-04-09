@@ -58,7 +58,7 @@ class AuthController extends Controller
     *@OA\Post(
     *path="/api/signup",
     *tags={"Register"},
-    *summary="Register a user",
+    *summary="Register a user throttling : 5",
     *@OA\Response(
         * response = 201,
         * description = "Created"),
@@ -136,7 +136,7 @@ class AuthController extends Controller
     *@OA\Post(
     *path="/api/signin",
     *tags={"Login"},
-    *summary="Log a user in",
+    *summary="Log a user in throttling : 5",
     *@OA\Response(
         * response = 200,
         * description = "Ok"),
@@ -183,7 +183,7 @@ class AuthController extends Controller
     *@OA\Post(
     *path="/api/signout",
     *tags={"Logout"},
-    *summary="Log a user out",
+    *summary="Log a user out throttling : 5",
     *@OA\Response(
         * response = 204,
         * description = "No content"),

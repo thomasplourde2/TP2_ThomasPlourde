@@ -10,6 +10,8 @@ use Exception;
 use Illuminate\Database\QueryException;
 use App\Http\Resources\UserResource;
 
+ /** * @OA\Info(title="Films API", version="0.1") */
+
 class AuthController extends Controller
 {
     /**
@@ -52,6 +54,44 @@ class AuthController extends Controller
         //
     }
 
+/**
+    *@OA\Post(
+    *path="/api/signup",
+    *tags={"Register"},
+    *summary="Register a user",
+    *@OA\Response(
+        * response = 201,
+        * description = "Created"),
+        * @OA\RequestBody(
+            * @OA\MediaType(
+            * mediaType="application/json",
+            * @OA\Schema(
+                * @OA\Property(
+                    * property="login",
+                    * type="string"
+                * ),
+                * @OA\Property(
+                    * property="password",
+                    * type="string"
+                * ),
+                * @OA\Property(
+                    * property="email",
+                    * type="string"
+                * ),
+                * @OA\Property(
+                    * property="last_name",
+                    * type="string"
+                * ),
+                * @OA\Property(
+                    * property="first_name",
+                    * type="string"
+                * ),
+            * )
+        * )
+    * )
+* )
+*/
+
     public function register(Request $request)
     {
         try
@@ -92,6 +132,32 @@ class AuthController extends Controller
         }
     }
 
+/**
+    *@OA\Post(
+    *path="/api/signin",
+    *tags={"Login"},
+    *summary="Log a user in",
+    *@OA\Response(
+        * response = 200,
+        * description = "Ok"),
+        * @OA\RequestBody(
+            * @OA\MediaType(
+            * mediaType="application/json",
+            * @OA\Schema(
+                * @OA\Property(
+                    * property="login",
+                    * type="string"
+                * ),
+                * @OA\Property(
+                    * property="password",
+                    * type="string"
+                * ),
+            * )
+        * )
+    * )
+* )
+*/
+
     public function login(Request $request)
     {
         try
@@ -112,6 +178,28 @@ class AuthController extends Controller
             abort(SERVER_ERROR, 'Server error');
         }
     }
+
+/**
+    *@OA\Post(
+    *path="/api/signout",
+    *tags={"Logout"},
+    *summary="Log a user out",
+    *@OA\Response(
+        * response = 204,
+        * description = "No content"),
+        * @OA\RequestBody(
+            * @OA\MediaType(
+            * mediaType="application/json",
+            * @OA\Schema(
+                * @OA\Property(
+                    * property="Authorization",
+                    * type="string"
+                * ),
+            * )
+        * )
+    * )
+* )
+*/
 
     public function logout(Request $request)
     {
